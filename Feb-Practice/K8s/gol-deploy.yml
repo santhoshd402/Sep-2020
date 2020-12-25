@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gameoflife
+spec: 
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gol
+      ver: 1.1.1
+  template:
+    metadata:
+      labels:
+        app: gol
+        ver: 1.1.1
+    spec:
+      containers:
+        - name: gameoflife
+          image: tomcat:8
+          ports:
+            - containerPort: 8080
+

@@ -1,0 +1,10 @@
+# for aws volume we have to use storage class then persistent volume an then claim that volume
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: dobbey
+  
+provisioner:
+
+parameters:

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openmrs-deploy
+  labels:
+    app: openmrs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: openmrs
+  template:
+    metadata:
+      name: openmrs-deploy
+      labels:
+        app: openmrs
+    spec:
+      containers:
+        - name: openmrs-deploy
+          image: santhud402/openmrs:1.0
+          ports:
+            - containerPort: 8080
